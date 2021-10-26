@@ -3,11 +3,12 @@ updatesPerSecond = 60
 let BG_COLOR = '#333'
 
 class Player{
-  constructor(x, y, color){
+  constructor(x, y, color, name){
 
     this.x = x
     this.y = y
     this.R = 30
+    this.name = name
 
     this.COLOR = color;
     this.VEL = 6
@@ -34,16 +35,18 @@ class Player{
   }
 
   graphics() {
-
     circle(this.x, this.y, this.R, this.COLOR)
-
+    text(this.x, this.y, 10, this.name, '#fff')
   }
 
 }
 
-let player1 = new Player(100, 100, 'blue')
+let pName1 = prompt('Ange ett namn till spelare 1: ')
+let pName2 = prompt('Ange ett namn till spelare 2: ')
 
-let player2 = new Player(100, 100, 'red')
+let player1 = new Player(100, 100, 'blue', pName1)
+
+let player2 = new Player(100, 100, 'red', pName2)
 
 
 function graphics() {
