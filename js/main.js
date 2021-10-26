@@ -11,8 +11,6 @@ let player1 = new Player(100, 100, 'blue', pName1)
 
 let player2 = new Player(100, 100, 'red', pName2)
 
-
-
 function update(){
 
   logic()
