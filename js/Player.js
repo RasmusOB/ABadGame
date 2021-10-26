@@ -1,9 +1,3 @@
-updatesPerSecond = 60
-
-let BG_COLOR = '#333'
-
-let playerCount = 0
-
 class Player{
   constructor(x, y, color, name){
 
@@ -48,37 +42,3 @@ class Player{
   }
 
 }
-
-let pName1 = prompt('Ange ett namn till spelare 1: ')
-let pName2 = prompt('Ange ett namn till spelare 2: ')
-
-let player1 = new Player(100, 100, 'blue', pName1)
-
-let player2 = new Player(100, 100, 'red', pName2)
-
-
-function graphics() {
-
-  fill(BG_COLOR)
-
-  player1.graphics()
-  player2.graphics()
-
-}
-
-function logic() {
-
-  player1.movement(keyboard.w, keyboard.a, keyboard.s, keyboard.d)
-
-  player2.movement(keyboard.up, keyboard.left, keyboard.down, keyboard.right)
-
-}
-
-function update(){
-
-  logic()
-
-  graphics()
-  
-}
-
