@@ -12,8 +12,6 @@ class Enemy {
   
   movement() {
     
-    circle(this.x, this.y, this.r, this.c)
-    
     let d = distance(this.x, this.y, player.x, player.y) 
     
     if(d < player.r) {
@@ -32,6 +30,9 @@ class Enemy {
     } else {
       this.y -= this.vel
     }
-    
+  }
+
+  graphics() {
+    circle(this.x, this.y, this.r, this.c)
   }
 }
