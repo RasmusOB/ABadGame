@@ -36,7 +36,7 @@ class Player{
 
   graphics() {
     circle(this.x, this.y, this.R, this.COLOR)
-    text(this.x, this.y, 10, this.name, '#fff')
+    text(this.x + 5 - this.name.length/2 * 10, this.y - this.R - 10, 10, this.name, '#fff')
   }
 
 }
