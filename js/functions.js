@@ -1,4 +1,3 @@
-
 function graphics() {
 
   fill(BG_COLOR)
