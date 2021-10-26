@@ -2,13 +2,21 @@ updatesPerSecond = 60
 
 let BG_COLOR = '#333'
 
+let playerCount = 0
+
 class Player{
   constructor(x, y, color, name){
+
+    playerCount++
 
     this.x = x
     this.y = y
     this.R = 30
-    this.name = name
+    if(name.length > 0) {
+      this.name = name
+    } else {
+      this.name = playerCount.toString()
+    }
 
     this.COLOR = color;
     this.VEL = 6
