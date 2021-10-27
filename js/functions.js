@@ -9,6 +9,9 @@ function graphics() {
     enemy2.graphics();
     enemy3.graphics();
 
+    // TIMER
+    text(100, totalHeight - 100, 50, Math.round(time), '#fff');
+
     enemy1.kill();
     enemy2.kill();
     enemy3.kill();
@@ -17,7 +20,7 @@ function graphics() {
 // THE FUNCTION THAT IS CALLED WHEN YOU DIE
 function death() {
     let randomMessage = random(1, 10);
-    let txtSize = 100;
+    let txtSize = 60;
     let deathMessage = '';
 
     switch (randomMessage) {
@@ -56,8 +59,39 @@ function death() {
                 'if you find this comment you is AWESOME, please tell me if you liked the game. THE MAKER IS RasmusOB';
     }
 
+    let deathTextX = 100;
+    let deathTextY = txtSize + txtSize;
+
+    let timeTextX = deathTextX;
+    let timeTextY = deathTextY + txtSize + txtSize;
+
+    let patheticTextX = timeTextX;
+    let patheticTextY = timeTextY + txtSize + txtSize;
+
+    let textBoxLength = totalWidth - deathTextX;
+    let textBoxHeight =
+        txtSize + txtSize + txtSize + txtSize + txtSize + txtSize;
+
     fill('red');
-    text(100, txtSize + txtSize, txtSize, deathMessage, '#000');
+    rectangle(
+        deathTextX - deathTextX / 2,
+        deathTextY - deathTextY / 2,
+        textBoxLength,
+        textBoxHeight,
+        'black'
+    );
+
+    text(deathTextX, deathTextY, txtSize, deathMessage, '#fff');
+    text(
+        timeTextX,
+        timeTextY,
+        txtSize / 2,
+        `Your time was ${Math.round(time)} seconds which is approximately ${(
+            Math.round(time) / 60
+        ).toFixed(2)} in minutes`,
+        '#fff'
+    );
+    text(patheticTextX, patheticTextY, txtSize, `Pathetic...`, '#fff');
 
     stopUpdate();
 }
@@ -75,4 +109,6 @@ function logic() {
     enemy1.movement();
     enemy2.movement();
     enemy3.movement();
+
+    time += 0.0166666666667;
 }
