@@ -17,34 +17,32 @@ class Enemy {
     
     if(dP1 < player1.R) {
       death()
-      stopUpdate()
     }
 
     if(dP2 < player2.R) {
       death()
     }
   
-    if(dP1 > dP2) {
+    if(dP1 < dP2) {
       if(player1.x > this.x) {
         this.x += this.VEL
       } else {
         this.x -= this.VEL
       }
+
+      if(player1.y > this.y) {
+        this.y += this.VEL
+      } else {
+        this.y -= this.VEL
+      }
+
     } else {
       if(player2.x > this.x) {
         this.x += this.VEL
       } else {
         this.x -= this.VEL
       }
-    }
-    
-    if(dP1 > dP2) {
-      if(player1.y > this.y) {
-        this.y += this.VEL
-      } else {
-        this.y -= this.VEL
-      }
-    } else {
+
       if(player2.y > this.y) {
           this.y += this.VEL
         } else {
