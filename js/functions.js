@@ -37,7 +37,7 @@ function death() {
             deathMessage = 'this is too easy for me';
             break;
         case 5:
-            deathMessage = 'you guys is just bad';
+            deathMessage = 'you guys are just bad';
             break;
         case 6:
             deathMessage = 'i am sorry but.. HOW?';
