@@ -15,6 +15,9 @@ function graphics() {
     enemy1.kill();
     enemy2.kill();
     enemy3.kill();
+
+    player1.limitArea()
+    player2.limitArea()
 }
 
 // THE FUNCTION THAT IS CALLED WHEN YOU DIE

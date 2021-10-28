@@ -33,12 +33,18 @@ class Player{
     if(right) {
       this.x += this.VEL
     }
-
   }
 
   graphics() {
     circle(this.x, this.y, this.R, this.COLOR)
     text(this.x + 5 - this.name.length/2 * 10, this.y - this.R - 10, 10, this.name, '#fff')
+  }
+
+  limitArea() {
+
+    if(this.y > totalHeight || this.y < 0 || this.x > totalWidth || this.x < 0) {
+      death()
+    } 
   }
 
 }
